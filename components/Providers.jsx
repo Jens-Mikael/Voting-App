@@ -1,3 +1,4 @@
+"use client";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/firebase/context/AuthContext";
 import { Provider } from "react-redux";
