@@ -22,7 +22,6 @@ const CreateVotePage = () => {
           </div>
           {!loading && userVotes ? (
             <div className="flex flex-col gap-14">
-              
               <div className="grid grid-flow-row xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-10 justify-center items-center">
                 {Object.keys(userVotes).map((voteKey, i) => (
                   <UserVoteCard

@@ -2,10 +2,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { AuthProvider } from "@/firebase/context/AuthContext";
-import { Provider } from "react-redux";
-import { store } from "@/redux/store";
+import Providers from "@/components/Providers";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -21,19 +18,14 @@ const ubuntu = Ubuntu({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
-      <ThemeProvider attribute="class">
-        <Provider store={store}>
-          <AuthProvider>
-            <body
-              className={`${ubuntu.variable} font-ubuntu h-screen relative text-[#0f172a] bg-neutral-100 dark:bg-slate-950 dark:text-[#e2e8f0] border-slate-900`}
-            >
-              <Header />
-              {children}
-            </body>
-          </AuthProvider>
-        </Provider>
-      </ThemeProvider>
+      <Providers>
+        <body
+          className={`${ubuntu.variable} font-ubuntu h-screen relative text-[#0f172a] bg-neutral-100 dark:bg-slate-950 dark:text-[#e2e8f0] border-slate-900`}
+        >
+          <Header />
+          {children}
+        </body>
+      </Providers>
     </html>
   );
 }
